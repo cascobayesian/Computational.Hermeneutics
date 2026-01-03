@@ -2,6 +2,7 @@
 title: "Our uncertain view: probability, redux"
 author: "JACK O'BRIEN"
 editor: visual
+output: 
 ---
 
 ## ``..common sense reduced to calculation..''

@@ -14,7 +14,6 @@ The Tufte-Quarto project is an homage to [Edward Tufte](#sec-tufte). It simplifi
 
 This documention itself is using Tufte-Quarto. 
 
-
 ::: {.content-visible when-format="html"}
 
 [![Tufte-Quarto Documentation](/Images/bookcover){.column-margin #fig-cover}](./TufteStyledBook.pdf)
