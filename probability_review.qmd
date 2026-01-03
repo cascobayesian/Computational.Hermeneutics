@@ -1,0 +1,516 @@
+---
+title: ""
+author: ""
+editor: visual
+format:
+  beamer:
+    section-titles: false
+    include-in-header:
+      - preamble.tex
+
+---
+
+## "..common sense reduced to calculation.."
+
+\begin{quote}
+\Large
+\emph{``The theory of probabilities is at its root nothing but common sense reduced to calculation; it enables us to appreciate with exactness that which accurate minds feel with a sort of instinct for which often times they are unable to account.``}
+\small 
+\vspace{1cm}
+
+\hspace{4cm} \textcolor{purple}{- Pierre Simon Laplace  (1819)}
+\end{quote}
+
+## Outcomes, sample spaces, and events
+\normalsize
+We will assume an experiment (or observational process) results in a single outcome (though that single outcome may be as complex as we'd like). A \textcolor{purple}{sample space} is the collection of all possible \textcolor{blue}{outcomes} of that experiment. An \textcolor{red}{event} is just one collection of outcomes.
+
+\begin{center}
+\includegraphics[scale=0.08]{venn.png} \\
+This simple framework is remarkably powerful in terms of organizing our statistical thought.
+\end{center}
+
+## The arrangement of experimental things
+
+\begin{center}
+\includegraphics[scale=0.08]{venn.png} \\
+Venn Diagram : dots are outcomes, closed curves are events
+\end{center}
+
+\small 
+\begin{itemize}
+\item Lower-case letters late in the alphabet are outcomes : $x, y, w, z$.
+\item Events are capital letters in the middle alphabet: $E,F,G$.
+\item  To write an element in an event: $w \in D$
+\item $H \subseteq E$ means each outcome in $H$ is also in $E$. \\
+\hspace{1cm} \hbox{\textcolor{blue}{Visually}:} containers contained.
+\item It may be that $H \subseteq E$ and $H = E$ or $H \neq E$.
+\end{itemize}
+
+
+
+## Operations on events
+
+\large
+
+\begin{center}
+
+The goal isn't just to make events; it's to work with them: \\
+\textcolor{blue}{change them,  combine them,  remove them}.  \\ 
+\vspace{0.25cm}
+We do this with \textcolor{red}{event operations}! \\
+\end{center}
+\Large
+\vspace{0.2cm}
+\begin{center}
+\begin{tabular}{cccc}
+Operation & Logic & Math & R Symbol \\
+\hline Union & OR & $A \cup B $ & $|$ \\
+Intersect & AND & $A \cap B $ & $\&$ \\
+Complement & NOT & $A^c $ & $\mbox{!}$ \\
+\end{tabular}
+\end{center}
+\small
+\begin{itemize}
+\item Philosophy, mathematics, statistics, computer science all use logic but then often talk about it in slightly different ways.
+\end{itemize}
+
+## Event algebra
+
+\noindent When we combine event operations, we need a set of rules -- \textcolor{red}{an algebra!} -- to know what we should do: 
+\vspace{0.5cm}
+\small
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\fbox{Commutativity:}
+\begin{itemize}
+\item $A\cup B = B \cup A$
+\item $A\cap B = B \cap A$
+\end{itemize}
+\vspace{0.1cm}
+\fbox{Associativity:}
+\begin{itemize}
+\item $A\cup (B \cup C) = (A \cup B) \cup C$
+\item $A\cap (B \cap C) = (A \cap B) \cap C$
+\end{itemize}
+\vspace{0.1cm}
+\fbox{Distributivity:}
+\begin{itemize}
+\item $A\cup (B \cap C) = (A \cup B) \cap  (A \cup C)$
+\item $A\cap (B \cup C) = (A \cap B) \cup  (A \cap C)$
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\fbox{Identities / idempotence}:
+\begin{itemize}
+\item $A \cap A = A$, $A \cup A = A$
+\item $A \cup A^c = S$, $A \cap A^c = \emptyset$
+\item $(A^c)^c = A$
+\item $\emptyset \cap A = \emptyset$, $A \cup \emptyset = A$
+\end{itemize}
+\vspace{0.5cm}
+\fbox{de Morgan's Law:}
+\begin{itemize}
+\item $(A \cap B)^c = A^c \cup B^c$
+\item $(A \cup B)^c = A^c \cap B^c$
+\end{itemize}
+\end{column}
+\end{columns}
+
+
+## What we need to remember from probability...
+\large
+\textcolor{purple}{The definition, surely!}
+\begin{itemize}
+\item In general, we'll assume we can construct a sample space $S$ -- an abstracted experiment that represents all possible outcomes of an observational process... 
+\vspace{0.1cm}
+\item ...As well as all our usual set-theoretic properties: events, inclusion/exclusion, union, intersection, complement, and the attendant algebraic rules (associativity, etc).
+\vspace{0.1cm}
+\item A \textcolor{red}{probability} is a function from events in a sample space $S$ into the real numbers such that for any events $A$ and $B$:
+\vspace{0.25cm}
+\begin{itemize}
+\item $\mathbb{P}(S) = 1$;
+\item $\mathbb{P}(A) \ge 0$; and,
+\item If $A \cap B = \empty$ then $\mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B) $
+\end{itemize}
+\end{itemize}
+
+
+## Probability as a (special) function
+
+\normalsize
+We usually think of probability as a measure of uncertainty, which is it is. But probability is also a special type of function that takes in \textcolor{blue}{events} and gives \textcolor{red}{numbers} in such a way that the two different algebras work together: \textcolor{purple}{it preserves the underlying experimental logic}!
+
+\begin{center}
+\includegraphics[scale=0.25]{prob_function.pdf} \\
+Events \hspace{1.5cm} Numbers
+\end{center}
+\small
+\begin{itemize}
+\item Building \textcolor{red}{probability models} of data sets is one of the primary tasks in this course.
+\end{itemize}
+
+	
+## Simple rules for probability
+There are several easily provable statements we'll use innumerable times through the course:
+\Large
+\vspace{0.25cm}
+\begin{enumerate}
+	\item $\mathbb{P}(\emptyset) = 0$
+	\vspace{0.1cm}
+	\item $\mathbb{P}(A^c) = 1 - \mathbb{P}(A)$
+	\vspace{0.1cm}
+	\item If $E \subseteq F$ then $\mathbb{P}(E) \le \mathbb{P}(F)$.
+	\vspace{0.1cm}
+	\item For any two events $E$ and $F$, then:
+	$$ \mathbb{P}(E \cup F) = \mathbb{P}(E) + \mathbb{P}(F) - \mathbb{P}(E \cap F) \mbox{.}$$
+\end{enumerate}
+
+## Probabilistic updates...
+
+\begin{center}
+\includegraphics[scale=0.3]{events_cond.pdf}
+\end{center}
+\Large
+\begin{center}
+\textcolor{purple}{If you know $A$ occurred, how does your belief in $B$ change?}
+\end{center}
+
+## Conditional probability
+\large
+\begin{center}how to update belief about $B$ once $A$ has been observed.
+\end{center}
+
+\begin{center}
+\includegraphics[scale=0.18]{events_cond_2.pdf}
+\end{center}
+$$ \mathbb{P}(B|A) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(A)} \mbox{.}$$
+
+\vspace{0.25cm}
+\begin{itemize}
+\item We call this process `conditioning.'
+\item We refer to \textcolor{red}{conditional probabilities} or \textcolor{red}{conditionals}.
+\end{itemize}
+
+
+
+## Conditionals multiply!
+Suppose we have three events : $A$, $B$, $C$.  
+
+\vspace{0.5cm}
+
+Conditioning allows us to turn joint probabilities into multiplications of conditional probabilities:
+\begin{eqnarray*}
+\mathbb{P}(A \cap B \cap C) &=& \mathbb{P}(A | B \cap C) \cdot \mathbb{P}(B|C) \cdot \mathbb{P}(C) \\
+& = &  \mathbb{P}(C | A \cap B) \cdot \mathbb{P}(A|B) \cdot \mathbb{P}(B) \\
+& = &  \mathbb{P}(B | A \cap C) \cdot \mathbb{P}(A|C) \cdot \mathbb{P}(C) \\
+&  & \mbox{\textcolor{blue}{(... and three more, to boot...)}}
+\end{eqnarray*}
+
+\begin{itemize}
+\item This often means we can decompose problems according to conditional dependency structures.
+\item We can turn this flexibility to our advantage by \textcolor{blue}{choosing} the conditioning that works for us best scientifically. 
+\end{itemize}
+
+## How unconditional are they? Independently so!
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[scale=0.25]{mosaic_emp.png} & \includegraphics[scale=0.25]{mosaic_ind.png}\\
+Independent? & Independent! \\
+$\mathbb{P}(S|M) \stackrel{?}{=} \mathbb{P}(S|F) $ & $\mathbb{P}(S|M) = \mathbb{P}(S|F). $
+\end{tabular} \\
+\end{center}
+\small
+\vspace{0.5cm}
+ Two events $A$ and $B$ are independent if 
+$$ \mathbb{P}(A \cap B) = \mathbb{P}(A) \cdot \mathbb{P}(B) \mbox{.}$$
+Put another way:
+$$ \mathbb{P}(A | B) = \mathbb{P}(A) \mbox{.}$$
+
+## Conditional independence
+
+For notation, we write $$ A \perp B $$
+to indicate that events $A$ and $B$ are independent.
+
+\vspace{0.5cm}
+
+But there isn't just one independence: events may be independent in a variety of ways! Statistically, we are often interested when one event induces other events to be independent, which we call \textcolor{blue}{conditional independence}:
+\Large
+$$ A |C \perp B |C \Leftrightarrow \mathbb{P}(A \cap B |C) = \mathbb{P}(A |C) \cdot \mathbb{P}( B |C) \mbox{.}$$
+\normalsize
+\begin{itemize}
+\item Conditional independence often occurs when we apply tests to experimental conditions, or repeat experiments. 
+\end{itemize}
+
+## Partitions
+It's often helpful to think of dividing the sample space into pieces:
+\begin{center}
+\includegraphics[scale=0.15]{blank.pdf}
+\end{center}
+\small
+These pieces (which are themselves events) form a \textcolor{red}{partition}, a collection of events $\{A_1, A_2,\cdots, A_N\}$ such that:
+\small
+\begin{enumerate}
+\item No two overlap : $A_i \cap A_j = \emptyset$ for any $i \neq j$, and,
+\item They entirely cover the space : $A_1 \cup A_2 \cup \cdots \cup A_N = S$.
+\end{enumerate}
+\vspace{0.1cm}
+\textcolor{blue}{Why might you do this?}
+\begin{itemize}
+\item Any category (male/female,  country of origin) can form a partition.
+\item Partitions are often associated with explanations!
+\end{itemize}
+
+
+
+## Law of jigsaw pieces
+
+If $A_1,\cdots, A_N$ form a partition for $S$ and $E$ is an event in $S$ then:
+
+$$\mathbb{P}(E) = \sum_{i=1}^N \mathbb{P}(E | A_i ) \cdot \mathbb{P}(A_i)  \mbox{,}$$
+
+\begin{center}
+which is known as \textcolor{blue}{The Law of Total Probability (LTP)}.
+\normalsize
+
+\includegraphics[scale=0.17]{jigsaw.pdf}\\
+In words: \textcolor{red}{The total amount of paint - $\mathbb{P}(E)$ - is the amount of each piece painted - $\mathbb{P}(E|A_i)$ -  multiplied by the size of the piece - $\mathbb{P}(A_i)$ - summed over all the pieces.}
+
+\end{center}
+
+
+## Bayes' Theorem
+Bayes' Theorem is a direct consequence of conditioning: 
+$$\mathbb{P}(A | B) = \frac{\mathbb{P}(B | A) \cdot \mathbb{P}(A)}{\mathbb{P(B)}} $$
+
+\vspace{0.1cm}
+
+\begin{center}
+\includegraphics[scale=0.23]{mosaic_emp.png}
+\end{center}
+\small
+\begin{itemize}
+	\item Bayes Theorem: we can calculate any conditionals by inverting them, provided we know the global probabilities.
+	\item We won't be using this too much this semester but it is a good idea to have rolling around.
+\end{itemize} 
+\end{frame}
+
+## Random variables
+\begin{center}
+\huge\textcolor{purple}{These are our object of study!} \\
+\vspace{1cm}
+\large
+\begin{tabular}{ccc}
+\fbox{\textcolor{blue}{Theoretical}} & &\fbox{\textcolor{red}{Empirical}} \\
+& $\Longleftrightarrow$ & \\
+e.g. Binomial, normal & & Observed data \\
+\end{tabular}
+\end{center}
+\begin{center}
+Statistical modeling considers how to bring these theoretical and the empirical pieces into correspondence.
+\end{center}
+
+
+
+\vspace{0.5cm}
+\textbf{Three ways to think about random variables:}
+\begin{itemize}
+	\item A function from a sample space into numbers
+	\item The measurement of an experiment
+	\item A realization from a probability distribution
+\end{itemize}
+\vspace{0.25cm}
+\large
+
+
+
+## Bernoulli random variable
+
+
+\large
+
+Suppose we have a set of independent trials that each record a binary trial, where the probability of a positive outcome is $p$. 
+
+\vspace{0.5cm}
+
+We write these RVs as $X_1,\cdots, X_N \stackrel{i.i.d.}{\sim} \mbox{BERNOULLI}(p).$ 
+\vspace{0.25cm}
+\begin{itemize}
+	\item $i.i.d$ : identically and independently distributed;
+\end{itemize}
+
+\normalsize
+
+\vspace{0.25cm}
+\fbox{\textcolor{blue}{IDENTICAL}}: All trials are the same. 
+
+\vspace{0.25cm}
+\fbox{\textcolor{blue}{INDEPENDENT}}: $\mathbb{P}(X_i=k, X_j =r) = \mathbb{P}(X_i=k) \cdot \mathbb{P}(X_j=r)$
+
+\large
+\vspace{0.25cm}
+Then:
+$$ Y = \sum_{i=1}^N X_i  \sim \mbox{BINOMIAL}(N,p) \mbox{.}$$
+Which also means
+$$ X \sim \mbox{BINOMIAL}(1,p) \equiv \mbox{BERNOULLI}(p)$$
+
+
+
+
+## Binomial random variable
+
+\textcolor{purple}{One of our most common RVs is the binomial random variable}:
+$$ X \sim \mbox{BINOMIAL}(N,p) \Longleftrightarrow \mathbb{P}(X=k) = {N \choose K} \cdot  p^K (1-p)^{N-K} $$
+\vspace{0.25cm}
+
+\textcolor{blue}{As an abstract experiment:} we can think of the binomial as $N$ independent trials with binary (0/1) outcomes added together; Each trial has the same \textcolor{purple}{weight} ($p$), the probability of a success. \\ 
+
+\vspace{0.25cm}
+
+\textcolor{red}{Examples}
+\begin{itemize}
+\item Number of people in support of proposition
+\item Number of people who survive an infection
+\item Number of copies of a specific gene in a population
+\item ... so, so common!
+\end{itemize}
+
+
+## A reasonable supposition?
+\large
+
+Suppose $$ X \sim \mbox{BINOMIAL}(N,p) $$ and we observe that $X=k$. A natural estimate for $p$ is then $$\widehat{p} = \frac{K}{N}\mbox{.}$$
+
+\vspace{0.5cm}
+\normalsize
+\begin{itemize}
+\item $p$ is a \textcolor{blue}{parameter}; $\widehat{p}$ is an \textcolor{red}{estimate} of that parameter.
+\vspace{0.25cm}
+	\item 'Natural' is always a suspicious construction. We'll work on this rationale later.
+	\vspace{0.25cm}
+	\item However it will be helpful to have this as a starting example so let's take it with us, together with a hint of suspicion.
+\end{itemize}
+
+
+
+## Probability mass function
+The \textcolor{red}{probability mass function} (pmf) gives the probability of a discrete random variable taking a value.  
+
+\vspace{0.1cm}
+
+\textbf{Binomial PMF:}
+
+\begin{center}
+\includegraphics[scale=0.23]{binomial_pmf.pdf}
+\end{center}
+\small
+\begin{itemize}
+	\item The shape of the pmf is controlled by $p$.
+	\item Each $p$ gives its own pmf.
+\end{itemize}
+
+
+## Poisson random variable
+
+$$X \sim \mbox{POISSON}(\lambda) \mbox{ for } X=0,1,2,\cdots \Longleftrightarrow \mathbb{P}(X=k) = \frac{e^{-\lambda} \cdot \lambda^k}{k!} $$
+
+```{r}
+#| fig-width: 4
+#| fig-height: 2.75
+#| fig-align: center
+
+x <- 0:20
+y <- dpois(x,5)
+par(mar=c(5,5,4,2),cex.axis=1.,cex.lab=1.)
+plot(x,y,col='blue',type='h',lwd=2,xlab="",ylab="Probability")
+```
+
+\small
+\begin{itemize}
+\item The Poisson random variable, often called \textcolor{blue}{the law of rare events}, is an extension of the binomial random variable to the case where either $N$ is very large or $\lambda$ is very small. 
+\item Instead of the weight of the coin we have the \textcolor{red}{rate} of the process, usually given as $\lambda$ or $	\mu$. \\
+\item Ex:  cancer cases/yr in a city, hurricanes/yr, nesting pairs/yr
+\end{itemize}
+\normalsize
+\vspace{0.1cm} 
+
+## The additivity of Poissons
+Poisson random variables have a remarkable and statistically important property:
+\begin{center}
+ \textcolor{red}{They can be added and they are still Poisson}!
+ \end{center}
+\vspace{0.1cm}
+\textcolor{blue}{In math:} If $X$ and $Y$ are independent and 
+$$ X \sim \mbox{POISSON}(\mu) \mbox{ and } Y \sim \mbox{POISSON}(\lambda) $$
+then
+$$X + Y \sim \mbox{POISSON}(\mu + \lambda) $$
+\small
+\vspace{0.1cm}
+
+\begin{itemize}
+\item Ex: you want to estimate the cancer rate for all towns in a county, but only know the rates for the towns. 
+\item Hint: problem set! 
+\end{itemize}
+
+
+
+## Continuous random variables
+\small
+Continuous random variables take continuous values. Consequently, the concept of probabilistic mass no longer works and we need to consider \textcolor{red}{probability density}. It'll be easiest to see this in context so let's consider a specific example - the exponential random variable. 
+
+\vspace{0.65cm}
+
+\fbox{\textcolor{blue}{Exponential Random Variable}}
+$$X \sim \mbox{EXPONENTIAL}(\lambda) \Longleftrightarrow f_X(x) = \lambda \cdot e^{-\lambda x } \mbox{ for } x \ge 0$$
+\begin{center}
+\includegraphics[scale=0.12]{exponential_pdf.pdf}
+\end{center}
+\begin{itemize}
+	\item Exponentials model \textcolor{purple}{waiting times}: transportion, ecology, networks
+	\item Alternate parameterization : $f_X(x) = \frac{1}{\beta} e^{x/\beta} $
+\end{itemize}
+
+## Probability density functions
+Notice that we write $f_X(x) = \lambda \cdot e^{-\lambda x }$: this is the \textcolor{red}{probability density function}. This does not give the probability of exponential RV for each $x$; it gives the density of the random variable.
+
+$$ \mathbb{P}(a \le X \le b) = \int_a^b f_X(x) dx $$
+\begin{center}
+\includegraphics[scale=0.15]{exponential_pdf_region.pdf}
+\end{center}
+So the probability of observing a value between $5$ and $10$ is 
+$$ \mathbb{P}(5 \le X \le 10) = \int_a^b \lambda e^{-\lambda x} dx \mbox{.}$$ 
+
+## Normal random variable
+One of the most common and important random variables is the normal random variable:
+$$X \sim \mbox{NORMAL}(\mu,\sigma) \Longleftrightarrow f_X(x) = \frac{1}{\sqrt{2 \pi \sigma}} e^{-\frac{(x-\mu)^2}{2\cdot \sigma^2}} \mbox{ for } x \in \mathbb{R} $$
+\begin{center}
+\includegraphics[scale=0.17]{normal.pdf}
+\end{center}
+\small
+\begin{itemize}
+	\item Normals are ubiquitous (we'll see why later) but particularly common in social science, chemistry, biology, and physics. 
+	\item This one is so important we'll discuss it at length separately.
+	\item $\int_a^b f_X(x) dx$ \textbf{cannot} be calculated analytically.
+\end{itemize}
+
+
+## Simulating random variables in R
+
+$$ X \sim \mbox{BINOMIAL}(N,p)$$
+\small
+\begin{itemize}
+\item dbinom(k,N,p) : \textcolor{darkpurple}{calculates the probability of $X$ at $K$}.
+\item pbinom(k,N,p)  : \textcolor{red}{calculates the probability $\mathbb{P}(X \le k)$}. 
+\item rbinom(M,N,p)  : generates $M$ random binomials with $N, \ p$.
+\item qbinom(alpha,N,p) : finds $k$ so that $\mathbb{P}(X\le k)= \alpha$. 
+\end{itemize}
+\vspace{0.5cm}
+\begin{center}
+\includegraphics[scale=0.205]{binom_plot.pdf}\\
+$N=25, \ p =\frac{1}{3}$
+\end{center}
+\end{frame}
+
+
+
+

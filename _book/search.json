@@ -1,0 +1,42 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Computational Hermeneutics",
+    "section": "",
+    "text": "Preface\n\\[\\begin{eqnarray*}\n\\int_a^b f(x)dx &= & f_r \\\\\n\\end{eqnarray*}\\]",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "probability.html",
+    "href": "probability.html",
+    "title": "1  Our uncertain view",
+    "section": "",
+    "text": "This is the bit about probability",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Our uncertain view</span>"
+    ]
+  },
+  {
+    "objectID": "expectations.html",
+    "href": "expectations.html",
+    "title": "2  What to expect when you’re expecting",
+    "section": "",
+    "text": "This bit about expectations",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What to expect when you're expecting</span>"
+    ]
+  },
+  {
+    "objectID": "computational_rv.html",
+    "href": "computational_rv.html",
+    "title": "3  Simulating success",
+    "section": "",
+    "text": "This bit about rv in R\nHere we are??\nStill more",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Simulating success</span>"
+    ]
+  }
+]

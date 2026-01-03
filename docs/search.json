@@ -1,0 +1,42 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Tufte-Quarto Project Type\nDocumentation",
+    "section": "",
+    "text": "Welcome\nThe Tufte-Quarto project is an homage to Edward Tufte. It simplifies the production of books using a layout that resembles his books(Edward R. Tufte 2001; Edward R. Tufte, Goeler, and Benson 1990; Edward R. Tufte et al. 1998) with a companion website. The goal is for the book and website share the same aesthetics.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Preface</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#showcase",
+    "href": "index.html#showcase",
+    "title": "Tufte-Quarto Project Type\nDocumentation",
+    "section": "Showcase",
+    "text": "Showcase\n\nThis documentation\nThis documention itself is using Tufte-Quarto.\n\n\n\n\n\n\n\nFigure 1.1: Tufte-Quarto Documentation\n\n\n\n\nDissertation\nAs an example, my dissertation is being refactored with Tufte-Quarto, it gives an idea of a complex document built with Tufte-Quarto.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Preface</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#usage",
+    "href": "index.html#usage",
+    "title": "Tufte-Quarto Project Type\nDocumentation",
+    "section": "Usage",
+    "text": "Usage\nTo use this project type just:\nquarto use template fredguth/tufte-quarto",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Preface</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#about-edward-r.-tufte",
+    "href": "index.html#about-edward-r.-tufte",
+    "title": "Tufte-Quarto Project Type\nDocumentation",
+    "section": "About Edward R. Tufte",
+    "text": "About Edward R. Tufte\nProfessor Emeritus of Political Science, Statistics and Computer Sciente at Yale University, Edward Tufte is an expert in the presentation of informational. Also known as the godfather of charts. Check his website.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Preface</span>"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+---
+title: "Our uncertain view: probability, redux"
+author: "JACK O'BRIEN"
+editor: visual
+---
+
+## ``..common sense reduced to calculation..''
+
+\Large
+
+\emph{The theory of probabilities is at its root nothing but common sense reduced to calculation; it enables us to appreciate with exactness that which accurate minds feel with a sort of instinct for which often times they are unable to account.}
+
+\small
+\hspace{5cm} \textcolor{purple}{- Pierre Simon Laplace  (1819)}

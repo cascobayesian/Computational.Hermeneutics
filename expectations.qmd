@@ -1,0 +1,59 @@
+---
+title: ""
+author: ""
+format: 
+  beamer:
+    section-titles: false
+    include-in-header:
+      - preamble.tex
+---
+
+## What to expect when you're expecting
+
+A fundemental aspect of a random variable is its \textcolor{red}{expectation} - the value of the random variable after all its probability has been averaged out. The expected value or population mean is usually written as \textcolor{red}{$\mu$}.
+
+\vspace{0.1cm}
+Doing the actual \textcolor{blue}{averaging out} requires a more precise definition, which we'll have to adjust when the random variable is discrete or continuous: 
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[scale=0.18]{expectation_ex_disc.pdf} & \includegraphics[scale=0.18]{expectation_ex_cont.pdf} \\
+$\mu=\mathbb{E}(X) = \displaystyle \sum_{k : \mathbb{P}(X=k)>0} k \cdot \mathbb{P}(X=k)$& $\mathbb{E}(X) = \displaystyle \int_\Omega x\cdot f_X(x) dx$ \\
+\end{tabular}
+\end{center}
+
+## The law of the unconscious statistician (LOTUS)
+
+$$ \mathbb{E}(g(X)) = \displaystyle \int_{\Omega} g(x) \cdot f_X(x)) dx $$ 
+
+\textcolor{red}{LOTUS}: To take the expectation of a function of a random variable,  take the expectation of the function of the values of the random variable.
+
+\vspace{0.5cm}
+
+\begin{itemize}
+\item Why the 'unconscious statistician'? Because it's so easy to not even notice that \textcolor{red}{this isn't the same as the definition of the expectation}!
+\item (\textcolor{blue}{It's also incredibly useful.} So good to have a name for it.)
+\end{itemize}
+
+## Calculations with expectations
+
+\large
+A surprising amount of statistics is done just by manipulating expectations (and, more broadly, means) in different ways so it is wise to remind ourselves of the rules of calculating with expectations:
+\vspace{0.5cm}
+\begin{itemize}
+\item \fbox{ADDITIVE:} 
+$$\mathbb{E}(X+Y) = \mathbb{E}(X)+ \mathbb{E}(Y) \mbox{ for any two RVs, $X$ and $Y$.}$$
+\item \fbox{LINEARITY:} 
+$$\mathbb{E}(a\cdot X+b) = a \cdot \mathbb{E}(X)+b \mbox{ for any } a,b \in \mathbb{R}\mbox{.}$$
+\end{itemize}
+
+## Expected value or population mean?
+
+The expected value is also known as the population mean ^[pleonasm:]
+## What's a not a variable? 
+
+## Moments of insight
+
+## What is this moment?!?
+
+## Ordinary moments
+
