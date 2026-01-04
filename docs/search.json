@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Tufte-Quarto Project Type\nDocumentation",
     "section": "",
-    "text": "Welcome\nThe Tufte-Quarto project is an homage to Edward Tufte. It simplifies the production of books using a layout that resembles his books(Edward R. Tufte 2001; Edward R. Tufte, Goeler, and Benson 1990; Edward R. Tufte et al. 1998) with a companion website. The goal is for the book and website share the same aesthetics.",
+    "text": "Welcome\nThings and things1 ## Showcase",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Preface</span>"
     ]
@@ -14,7 +14,7 @@
     "href": "index.html#showcase",
     "title": "Tufte-Quarto Project Type\nDocumentation",
     "section": "Showcase",
-    "text": "Showcase\n\nThis documentation\nThis documention itself is using Tufte-Quarto.\n\n\n\n\n\n\n\nFigure 1.1: Tufte-Quarto Documentation\n\n\n\n\nDissertation\nAs an example, my dissertation is being refactored with Tufte-Quarto, it gives an idea of a complex document built with Tufte-Quarto.",
+    "text": "Showcase\n\nDissertation\nAs an example, my dissertation is being refactored with Tufte-Quarto, it gives an idea of a complex document built with Tufte-Quarto.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Preface</span>"
     ]
